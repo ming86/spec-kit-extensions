@@ -155,7 +155,7 @@ ls .specify/scripts/bash/create-*.sh
 
 # Verify commands (if using Claude Code)
 ls .claude/commands/*.md
-# Should show: bugfix.md, modify.md, refactor.md, hotfix.md, deprecate.md
+# Should show: speckit.bugfix.md, speckit.modify.md, speckit.refactor.md, speckit.hotfix.md, speckit.deprecate.md
 ```
 
 ## Configuration
@@ -254,7 +254,7 @@ Each AI agent requires different setup. See **[AI-AGENTS.md](AI-AGENTS.md)** for
 
 **For GitHub Copilot**:
 1. Create `.github/copilot-instructions.md`
-2. Add content from `.claude/commands/*.md`
+2. Add content from `.claude/commands/speckit.*.md`
 3. Format as Copilot instructions
 4. See [AI-AGENTS.md](AI-AGENTS.md#2-github-copilot) for complete example
 
@@ -311,7 +311,7 @@ To remove extensions:
 # Remove extension files
 rm -rf .specify/extensions/
 rm .specify/scripts/bash/create-{bugfix,modification,refactor,hotfix,deprecate}.sh
-rm .claude/commands/{bugfix,modify,refactor,hotfix,deprecate}.md
+rm .claude/commands/speckit.{bugfix,modify,refactor,hotfix,deprecate}.md
 
 # Remove constitution sections (manual - search for "Section VI")
 nano .specify/memory/constitution.md
