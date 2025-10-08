@@ -6,7 +6,7 @@ The modification workflow handles changes to existing features. It emphasizes **
 
 ## When to Use
 
-Use `/modify` when:
+Use `/speckit.modify` when:
 
 - Changing behavior of an existing feature
 - Adding capabilities to existing functionality
@@ -14,11 +14,11 @@ Use `/modify` when:
 - Altering contracts/APIs of existing code
 - Responding to changed requirements
 
-**Do NOT use `/modify` for**:
-- Creating new features → use `/specify` instead
-- Fixing bugs without changing intended behavior → use `/bugfix` instead
-- Improving code quality without behavior changes → use `/refactor` instead
-- Deprecating entire features → use `/deprecate` instead
+**Do NOT use `/speckit.modify` for**:
+- Creating new features → use `/speckit.specify` instead
+- Fixing bugs without changing intended behavior → use `/speckit.bugfix` instead
+- Improving code quality without behavior changes → use `/speckit.refactor` instead
+- Deprecating entire features → use `/speckit.deprecate` instead
 
 ## Process
 
@@ -80,7 +80,7 @@ specs/
 ## Command Usage
 
 ```bash
-/modify 014 "add avatar compression to reduce storage costs"
+/speckit.modify 014 "add avatar compression to reduce storage costs"
 ```
 
 This will:

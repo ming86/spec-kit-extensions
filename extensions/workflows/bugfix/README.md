@@ -14,11 +14,11 @@ Use `/bugfix` when:
 - Production monitoring detects an issue
 - Edge cases cause crashes or errors
 
-**Do NOT use `/bugfix` for**:
-- Adding new features → use `/specify` instead
-- Changing existing feature behavior intentionally → use `/modify` instead
-- Code quality improvements without behavior change → use `/refactor` instead
-- Emergency production issues → use `/hotfix` instead
+**Do NOT use `/speckit.bugfix` for**:
+- Adding new features → use `/speckit.specify` instead
+- Changing existing feature behavior intentionally → use `/speckit.modify` instead
+- Code quality improvements without behavior change → use `/speckit.refactor` instead
+- Emergency production issues → use `/speckit.hotfix` instead
 
 ## Process
 
@@ -72,7 +72,7 @@ specs/
 ## Command Usage
 
 ```bash
-/bugfix "button click doesn't save form data"
+/speckit.bugfix "button click doesn't save form data"
 ```
 
 This will:

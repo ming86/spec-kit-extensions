@@ -2,6 +2,39 @@
 
 set -e
 
+# Source common functions from spec-kit
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Check if we're in spec-kit repo (scripts/bash/common.sh) or extensions (need to go up to spec-kit)
+if [ -f "$SCRIPT_DIR/../bash/common.sh" ]; then
+    # Running from spec-kit integrated location: .specify/scripts/bash/
+    source "$SCRIPT_DIR/../bash/common.sh"
+elif [ -f "$SCRIPT_DIR/../../scripts/bash/common.sh" ]; then
+    # Running from spec-kit repo root scripts
+    source "$SCRIPT_DIR/../../scripts/bash/common.sh"
+else
+    # Fallback: try to find common.sh in parent directories
+    COMMON_SH_FOUND=false
+    SEARCH_DIR="$SCRIPT_DIR"
+    for i in {1..5}; do
+        if [ -f "$SEARCH_DIR/common.sh" ]; then
+            source "$SEARCH_DIR/common.sh"
+            COMMON_SH_FOUND=true
+            break
+        elif [ -f "$SEARCH_DIR/scripts/bash/common.sh" ]; then
+            source "$SEARCH_DIR/scripts/bash/common.sh"
+            COMMON_SH_FOUND=true
+            break
+        fi
+        SEARCH_DIR="$(dirname "$SEARCH_DIR")"
+    done
+
+    if [ "$COMMON_SH_FOUND" = false ]; then
+        echo "Error: Could not find common.sh. Please ensure spec-kit is properly installed." >&2
+        exit 1
+    fi
+fi
+
 JSON_MODE=false
 ARGS=()
 for arg in "$@"; do
@@ -18,33 +51,9 @@ if [ -z "$BUG_DESCRIPTION" ]; then
     exit 1
 fi
 
-# Function to find the repository root
-find_repo_root() {
-    local dir="$1"
-    while [ "$dir" != "/" ]; do
-        if [ -d "$dir/.git" ] || [ -d "$dir/.specify" ]; then
-            echo "$dir"
-            return 0
-        fi
-        dir="$(dirname "$dir")"
-    done
-    return 1
-}
-
-# Resolve repository root
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-if git rev-parse --show-toplevel >/dev/null 2>&1; then
-    REPO_ROOT=$(git rev-parse --show-toplevel)
-    HAS_GIT=true
-else
-    REPO_ROOT="$(find_repo_root "$SCRIPT_DIR")"
-    if [ -z "$REPO_ROOT" ]; then
-        echo "Error: Could not determine repository root. Please run this script from within the repository." >&2
-        exit 1
-    fi
-    HAS_GIT=false
-fi
+# Use spec-kit common functions
+REPO_ROOT=$(get_repo_root)
+HAS_GIT=$(has_git && echo "true" || echo "false")
 
 cd "$REPO_ROOT"
 
