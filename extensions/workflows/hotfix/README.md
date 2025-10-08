@@ -6,7 +6,7 @@ The hotfix workflow handles emergency production issues that require immediate r
 
 ## When to Use
 
-Use `/hotfix` when:
+Use `/speckit.hotfix` when:
 
 - Production service is down or severely degraded
 - Data loss or corruption is actively occurring
@@ -14,9 +14,9 @@ Use `/hotfix` when:
 - Critical functionality is completely broken
 - Every minute of downtime costs money/reputation
 
-**Do NOT use `/hotfix` for**:
-- Non-urgent bugs → use `/bugfix` instead
-- Planned changes → use `/modify` or `/specify` instead
+**Do NOT use `/speckit.hotfix` for**:
+- Non-urgent bugs → use `/speckit.bugfix` instead
+- Planned changes → use `/speckit.modify` or `/speckit.specify` instead
 - Known issues that can wait → use normal workflow
 - Issues only affecting staging/dev → fix normally
 
@@ -91,7 +91,7 @@ specs/
 ## Command Usage
 
 ```bash
-/hotfix "database connection pool exhausted causing 503 errors"
+/speckit.hotfix "database connection pool exhausted causing 503 errors"
 ```
 
 This will:

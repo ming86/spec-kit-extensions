@@ -6,11 +6,11 @@ Get started with Specify extension workflows in 5 minutes.
 
 Extensions add specialized workflows to Specify for activities beyond feature development:
 
-- `/bugfix` - Fix defects with regression tests
-- `/modify` - Change existing features with impact analysis
-- `/refactor` - Improve code quality with metrics tracking
-- `/hotfix` - Emergency production fixes with expedited process
-- `/deprecate` - Sunset features with phased rollout
+- `/speckit.bugfix` - Fix defects with regression tests
+- `/speckit.modify` - Change existing features with impact analysis
+- `/speckit.refactor` - Improve code quality with metrics tracking
+- `/speckit.hotfix` - Emergency production fixes with expedited process
+- `/speckit.deprecate` - Sunset features with phased rollout
 
 ## Quick Decision Tree
 
@@ -42,7 +42,7 @@ Removing a feature?
 
 ```bash
 # Discover a bug: save button doesn't work
-/bugfix "save button doesn't persist data"
+/speckit.bugfix "save button doesn't persist data"
 
 # This creates:
 # - Branch: bugfix/001-save-button-doesnt
@@ -62,7 +62,7 @@ Removing a feature?
 
 ```bash
 # Want to add avatar compression to feature 014
-/modify 014 "add avatar compression to reduce storage costs"
+/speckit.modify 014 "add avatar compression to reduce storage costs"
 
 # This creates:
 # - Branch: 014-mod-001-add-avatar-compression
@@ -83,7 +83,7 @@ Removing a feature?
 
 ```bash
 # Extract tweet service to reduce duplication
-/refactor "extract tweet submission into reusable service"
+/speckit.refactor "extract tweet submission into reusable service"
 
 # This creates:
 # - Branch: refactor/001-extract-tweet-service
@@ -105,7 +105,7 @@ Removing a feature?
 
 ```bash
 # Production is down!
-/hotfix "database connection pool exhausted causing 503 errors"
+/speckit.hotfix "database connection pool exhausted causing 503 errors"
 
 # This creates:
 # - Branch: hotfix/001-database-connection-pool
@@ -129,7 +129,7 @@ Removing a feature?
 
 ```bash
 # Old profile editor has low usage, high maintenance
-/deprecate 014 "low usage (< 1%) and high maintenance burden"
+/speckit.deprecate 014 "low usage (< 1%) and high maintenance burden"
 
 # This creates:
 # - Branch: deprecate/001-edit-profile-form
@@ -168,12 +168,12 @@ Removing a feature?
 
 ## Common Questions
 
-### When should I use `/bugfix` vs `/hotfix`?
+### When should I use `/speckit.bugfix` vs `/speckit.hotfix`?
 
 - **Bugfix**: Non-urgent, can wait for proper TDD process
 - **Hotfix**: Production emergency, every minute counts
 
-### When should I use `/modify` vs `/refactor`?
+### When should I use `/speckit.modify` vs `/speckit.refactor`?
 
 - **Modify**: Changing what the code does (behavior)
 - **Refactor**: Improving how the code works (structure/quality)

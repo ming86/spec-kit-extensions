@@ -16,7 +16,7 @@ Error: Invalid file type: application/octet-stream
 ### The Workflow
 
 ```bash
-/bugfix "when submitting the profile edit form and only changing the bio, it results in: Error: Invalid file type: application/octet-stream"
+/speckit.bugfix "when submitting the profile edit form and only changing the bio, it results in: Error: Invalid file type: application/octet-stream"
 ```
 
 ### What It Created
@@ -103,7 +103,7 @@ Profile edit form forced users to provide all fields even when they only wanted 
 ### The Workflow
 
 ```bash
-/modify 014 "make profile fields optional and remove email from form"
+/speckit.modify 014 "make profile fields optional and remove email from form"
 ```
 
 ### What It Created
@@ -232,7 +232,7 @@ After the first modification (making fields optional), users reported their prof
 ### The Workflow
 
 ```bash
-/modify 014 "make profile edits submit even if the user doesn't add a profile image"
+/speckit.modify 014 "make profile edits submit even if the user doesn't add a profile image"
 ```
 
 ### What It Created

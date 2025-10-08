@@ -6,7 +6,7 @@ This guide covers installing **spec-kit-extensions** for different scenarios.
 
 Before installing, ensure you have:
 
-- ✅ **spec-kit** installed (v0.0.30+)
+- ✅ **spec-kit** installed (v0.0.18+)
   ```bash
   uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
   ```
@@ -125,11 +125,11 @@ After installation, verify everything works:
 
 ```bash
 # Test each command (should show usage)
-/bugfix --help
-/modify --help
-/refactor --help
-/hotfix --help
-/deprecate --help
+/speckit.bugfix --help
+/speckit.modify --help
+/speckit.refactor --help
+/speckit.hotfix --help
+/speckit.deprecate --help
 ```
 
 ### Test Bash Scripts

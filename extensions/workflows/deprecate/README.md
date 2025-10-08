@@ -6,7 +6,7 @@ The deprecation workflow manages the planned sunset of features. It uses a **3-p
 
 ## When to Use
 
-Use `/deprecate` when:
+Use `/speckit.deprecate` when:
 
 - Feature no longer aligns with product vision
 - Better alternative exists and users should migrate
@@ -15,8 +15,8 @@ Use `/deprecate` when:
 - Security/compliance concerns
 - Technical debt reduction initiative
 
-**Do NOT use `/deprecate` for**:
-- Quick bug fixes → use `/bugfix` instead
+**Do NOT use `/speckit.deprecate` for**:
+- Quick bug fixes → use `/speckit.bugfix` instead
 - Temporary feature disabling → use feature flags
 - Emergency removal → explain why it's urgent first
 - Features still actively used → understand impact first
@@ -99,7 +99,7 @@ specs/
 ## Command Usage
 
 ```bash
-/deprecate 014 "low usage (< 1% users) and high maintenance burden"
+/speckit.deprecate 014 "low usage (< 1% users) and high maintenance burden"
 ```
 
 This will:

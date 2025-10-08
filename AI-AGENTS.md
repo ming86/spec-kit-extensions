@@ -60,11 +60,11 @@ Any AI Agent Reads & Implements
 **Usage**:
 ```bash
 # Commands work natively
-/bugfix "form crashes when submitting"
-/modify 014 "make fields optional"
-/refactor "extract duplicate code"
-/hotfix "production database connection timeout"
-/deprecate 003 "feature has low usage"
+/speckit.bugfix "form crashes when submitting"
+/speckit.modify 014 "make fields optional"
+/speckit.refactor "extract duplicate code"
+/speckit.hotfix "production database connection timeout"
+/speckit.deprecate 003 "feature has low usage"
 ```
 
 **Pros**:
@@ -190,7 +190,7 @@ When implementing any workflow, read the constitution and follow the appropriate
 **Usage**:
 ```
 # In Copilot Chat
-/bugfix "form crashes when submitting"
+/speckit.bugfix "form crashes when submitting"
 
 # Copilot will execute the script and help you implement
 ```
@@ -323,7 +323,7 @@ When implementing workflows, read files in this order:
 **Usage**:
 ```
 # In Cursor AI chat
-/bugfix "form crashes when submitting"
+/speckit.bugfix "form crashes when submitting"
 
 # Or describe the workflow
 "Create a bugfix workflow for: form crashes when submitting"
@@ -700,7 +700,7 @@ Yes! The workflows are agent-independent. You could use Claude Code for complex 
 
 Test with a simple bugfix:
 ```bash
-/bugfix "test workflow"
+/speckit.bugfix "test workflow"
 # or manually:
 .specify/scripts/bash/create-bugfix.sh "test workflow"
 ```

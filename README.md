@@ -6,13 +6,13 @@
 
 ## What Is This?
 
-**spec-kit** provides excellent structured workflows for feature development (`/specify → /plan → /tasks → /implement`). These extensions add 5 additional workflows for the remaining ~75% of software development work:
+**spec-kit** provides excellent structured workflows for feature development (`/speckit.specify → /speckit.plan → /speckit.tasks → /speckit.implement`). These extensions add 5 additional workflows for the remaining ~75% of software development work:
 
-- **`/bugfix`** - Fix bugs with regression-test-first approach
-- **`/modify`** - Modify existing features with automatic impact analysis
-- **`/refactor`** - Improve code quality with metrics tracking
-- **`/hotfix`** - Handle production emergencies with expedited process
-- **`/deprecate`** - Sunset features with phased 3-step rollout
+- **`/speckit.bugfix`** - Fix bugs with regression-test-first approach
+- **`/speckit.modify`** - Modify existing features with automatic impact analysis
+- **`/speckit.refactor`** - Improve code quality with metrics tracking
+- **`/speckit.hotfix`** - Handle production emergencies with expedited process
+- **`/speckit.deprecate`** - Sunset features with phased 3-step rollout
 
 ## Why Use These Extensions?
 
@@ -32,12 +32,12 @@ These extensions bring spec-kit's structured approach to all development activit
 
 | Activity | Without Extensions | With Extensions |
 |----------|-------------------|-----------------|
-| **New Feature** | ✅ `/specify` workflow | ✅ Same |
-| **Bug Fix** | ❌ Ad-hoc | ✅ `/bugfix` with regression tests |
-| **Modify Feature** | ❌ Ad-hoc | ✅ `/modify` with impact analysis |
-| **Refactor Code** | ❌ Ad-hoc | ✅ `/refactor` with metrics |
-| **Production Fire** | ❌ Panic | ✅ `/hotfix` with post-mortem |
-| **Remove Feature** | ❌ Hope | ✅ `/deprecate` with 3-phase sunset |
+| **New Feature** | ✅ `/speckit.specify` workflow | ✅ Same |
+| **Bug Fix** | ❌ Ad-hoc | ✅ `/speckit.bugfix` with regression tests |
+| **Modify Feature** | ❌ Ad-hoc | ✅ `/speckit.modify` with impact analysis |
+| **Refactor Code** | ❌ Ad-hoc | ✅ `/speckit.refactor` with metrics |
+| **Production Fire** | ❌ Panic | ✅ `/speckit.hotfix` with post-mortem |
+| **Remove Feature** | ❌ Hope | ✅ `/speckit.deprecate` with 3-phase sunset |
 
 ## Real-World Validation
 
@@ -102,10 +102,10 @@ See [INSTALLATION.md](INSTALLATION.md) for detailed instructions.
 
 ```bash
 # In your project, try:
-/bugfix --help
+/speckit.bugfix --help
 
 # Should see:
-# Usage: /bugfix "bug description"
+# Usage: /speckit.bugfix "bug description"
 # Creates a bugfix workflow with regression-test-first approach
 ```
 
@@ -117,28 +117,28 @@ See [INSTALLATION.md](INSTALLATION.md) for detailed instructions.
 
 ```
 Building something new?
-└─ Use `/specify "description"`
+└─ Use `/speckit.specify "description"`
 
 Fixing broken behavior?
 ├─ Production emergency?
-│  └─ Use `/hotfix "incident description"`
+│  └─ Use `/speckit.hotfix "incident description"`
 └─ Non-urgent bug?
-   └─ Use `/bugfix "bug description"`
+   └─ Use `/speckit.bugfix "bug description"`
 
 Changing existing feature?
 ├─ Adding/modifying behavior?
-│  └─ Use `/modify 014 "change description"`
+│  └─ Use `/speckit.modify 014 "change description"`
 └─ Improving code without changing behavior?
-   └─ Use `/refactor "improvement description"`
+   └─ Use `/speckit.refactor "improvement description"`
 
 Removing a feature?
-└─ Use `/deprecate 014 "deprecation reason"`
+└─ Use `/speckit.deprecate 014 "deprecation reason"`
 ```
 
 ### Example: Fix a Bug
 
 ```bash
-/bugfix "profile form crashes when submitting without image upload"
+/speckit.bugfix "profile form crashes when submitting without image upload"
 
 # This creates:
 # - Branch: bugfix/001-profile-form-crashes
@@ -156,7 +156,7 @@ Removing a feature?
 ### Example: Modify Existing Feature
 
 ```bash
-/modify 014 "make profile fields optional instead of required"
+/speckit.modify 014 "make profile fields optional instead of required"
 
 # This creates:
 # - Branch: 014-mod-001-make-profile-fields
@@ -173,12 +173,12 @@ Removing a feature?
 
 | Workflow | Command | Key Feature | Test Strategy |
 |----------|---------|-------------|---------------|
-| **Feature** | `/specify "..."` | Full spec + design | TDD (test before code) |
-| **Bugfix** | `/bugfix "..."` | Regression test | Test before fix |
-| **Modify** | `/modify 014 "..."` | Impact analysis | Update affected tests |
-| **Refactor** | `/refactor "..."` | Baseline metrics | Tests unchanged |
-| **Hotfix** | `/hotfix "..."` | Post-mortem | Test after (only exception) |
-| **Deprecate** | `/deprecate 014 "..."` | 3-phase sunset | Remove tests last |
+| **Feature** | `/speckit.specify "..."` | Full spec + design | TDD (test before code) |
+| **Bugfix** | `/speckit.bugfix "..."` | Regression test | Test before fix |
+| **Modify** | `/speckit.modify 014 "..."` | Impact analysis | Update affected tests |
+| **Refactor** | `/speckit.refactor "..."` | Baseline metrics | Tests unchanged |
+| **Hotfix** | `/speckit.hotfix "..."` | Post-mortem | Test after (only exception) |
+| **Deprecate** | `/speckit.deprecate 014 "..."` | 3-phase sunset | Remove tests last |
 
 ## Documentation
 
@@ -208,9 +208,10 @@ These extensions work with any AI agent that supports spec-kit:
 
 ### spec-kit Versions
 
-- ✅ **spec-kit v0.0.30+** (tested)
+- ✅ **spec-kit v0.0.18+** (updated for new `/speckit.` prefix)
 - ✅ Fully compatible with core spec-kit workflows
 - ✅ Non-breaking (can be added/removed without affecting existing features)
+- ⚠️ **Breaking change from v0.0.17**: All commands now use `/speckit.` prefix
 
 ## Project Structure
 

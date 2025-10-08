@@ -6,7 +6,7 @@ The refactor workflow is for improving code quality without changing behavior. I
 
 ## When to Use
 
-Use `/refactor` when:
+Use `/speckit.refactor` when:
 
 - Code works but is hard to understand/maintain
 - Identifying code smells (duplication, complexity, coupling)
@@ -15,10 +15,10 @@ Use `/refactor` when:
 - Extracting reusable components
 - Reducing technical debt
 
-**Do NOT use `/refactor` for**:
-- Changing behavior intentionally → use `/modify` instead
-- Fixing bugs → use `/bugfix` instead
-- Adding features → use `/specify` instead
+**Do NOT use `/speckit.refactor` for**:
+- Changing behavior intentionally → use `/speckit.modify` instead
+- Fixing bugs → use `/speckit.bugfix` instead
+- Adding features → use `/speckit.specify` instead
 - Improving code as part of feature work → include in feature tasks
 
 ## Core Principle
@@ -90,7 +90,7 @@ specs/
 ## Command Usage
 
 ```bash
-/refactor "extract tweet submission logic into reusable service"
+/speckit.refactor "extract tweet submission logic into reusable service"
 ```
 
 This will:
