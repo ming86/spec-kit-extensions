@@ -1,5 +1,20 @@
 # spec-kit Extensions
 
+> [!IMPORTANT]
+> **🚀 Claude Code users: Check out [SpecSwarm](https://github.com/MartyBonacci/specswarm)**
+>
+> This repository provides AI-agent-agnostic workflows that work with **multiple AI coding tools** (Claude Code, GitHub Copilot, Cursor, Windsurf, etc.).
+>
+> However, if you're specifically using **Claude Code**, we've created **[SpecSwarm](https://github.com/MartyBonacci/specswarm)** - a dedicated Claude Code plugin that includes:
+> - All 5 workflows from this repo (bugfix, modify, refactor, hotfix, deprecate)
+> - Native Claude Code plugin architecture for seamless integration
+> - Optimized templates leveraging Claude Code's specific capabilities
+> - **Active development and our primary focus going forward**
+>
+> **👉 Claude Code users: Visit [github.com/MartyBonacci/specswarm](https://github.com/MartyBonacci/specswarm) for the best experience**
+>
+> **Using other AI tools?** Continue with this repository - it's designed to work universally across AI coding assistants. Note that our development focus is shifting to SpecSwarm for Claude Code.
+
 **5 production-tested workflows that extend [spec-kit](https://github.com/github/spec-kit) to cover the complete software development lifecycle.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
